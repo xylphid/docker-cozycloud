@@ -9,7 +9,7 @@ This is a minimal, yet configurable image for cozy-stack.
 
 ## Supported tags
 
-* `edge`, `latest` ([Dockerfile](https://github.com/xylphid/dockers/blob/master/cozycloud/beta/Dockerfile))
+* `edge`, `latest` ([Dockerfile](https://github.com/xylphid/docker-cozycloud/blob/master/beta/Dockerfile))
 
 ## How to use this image
 
