@@ -14,7 +14,7 @@ curl --fail --silent -X PUT ${COZY_COUCHDB_URL}/_global_changes
 
 # Run server
 echo "Starting daemon ..."
-cozy-stack serve --config /etc/cozy/cozy.yml >> /dev/stdout 2>> /dev/stderr
+su cozy -c "cozy-stack serve --config /etc/cozy/cozy.yml" &
 
 sleep 10
 
@@ -23,7 +23,7 @@ if [[ $(cozy-stack instances ls | grep ${COZY_DOMAIN} | wc -l) = 0 ]]; then
 	echo "Create new instance :"
 	echo "  Name : ${COZY_DOMAIN}"
 	echo "  Applications : ${COZY_APPS}"
-	cozy-stack instances add --host 0.0.0.0 --apps ${COZY_APPS} --passphrase ${COZY_ADMIN_PASSPHRASE} ${COZY_DOMAIN}
+	su cozy -c "cozy-stack instances add --host 0.0.0.0 --apps ${COZY_APPS} --passphrase ${COZY_ADMIN_PASSPHRASE} ${COZY_DOMAIN}"
 else
 	echo "---"
 	echo "Instance for ${COZY_DOMAIN} is already installed"
