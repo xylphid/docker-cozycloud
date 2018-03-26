@@ -15,7 +15,7 @@ LABEL version=${VERSION}
 LABEL description="Cozy-Cloud Core"
 
 ENV COZY_ADMIN_PASSWORD     "password"
-ENV COZY_APPS               "calendar,collect,contacts,drive,photos,settings"
+ENV COZY_APPS               "collect,drive,onboarding,photos,settings"
 ENV COZY_DOMAIN             "mycozy.tld"
 
 ENV COZY_PORT               "8080"
@@ -37,7 +37,6 @@ RUN apk add --no-cache \
         curl \
         git \
         imagemagick \
-        rsyslog && \
     install -m0755 -o root -g root /tmp/cozy-stack /usr/bin/cozy-stack && \
     # Clean temporary folder
     rm -f /tmp/cozy-stack && \
@@ -50,8 +49,6 @@ COPY config/cozy.yml /etc/cozy/
 COPY docker-entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh && \
     ln -s usr/local/bin/docker-entrypoint.sh /entrypoint.sh # backwards compat
-
-USER cozy
 
 VOLUME /var/datas
 
