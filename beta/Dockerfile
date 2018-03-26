@@ -36,7 +36,7 @@ COPY --from=builder /go/bin/cozy-stack /tmp/cozy-stack
 RUN apk add --no-cache \
         curl \
         git \
-        imagemagick \
+        imagemagick && \
     install -m0755 -o root -g root /tmp/cozy-stack /usr/bin/cozy-stack && \
     # Clean temporary folder
     rm -f /tmp/cozy-stack && \
