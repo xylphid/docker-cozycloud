@@ -1,3 +1,5 @@
+![](https://img.shields.io/docker/automated/xylphid/cozy-stack.svg) ![](https://img.shields.io/docker/build/xylphid/cozy-stack.svg) ![](https://img.shields.io/microbadger/image-size/xylphid/cozy-stack.svg) ![](https://img.shields.io/docker/pulls/xylphid/cozy-stack.svg)
+
 ![Cozy](https://cozy.io/fr/images/cozy-logo-name-horizontal-blue.svg)
 
 # Cozy-stack
@@ -101,4 +103,4 @@ Here are supported environments variable and its definition :
 ## Image inheritance
 
 This docker image inherits from [alpine:3.7](https://hub.docker.com/_/alpine/) and [golang:1.10.0-alpine3.7](https://hub.docker.com/_/golang/). \
-The `Dockerfile` is mostly based on (https://hub.docker.com/r/moritzheiber/cozy-stack/).
+The `Dockerfile` is mostly based on [moritzheiber/cozy-stack](https://hub.docker.com/r/moritzheiber/cozy-stack).
